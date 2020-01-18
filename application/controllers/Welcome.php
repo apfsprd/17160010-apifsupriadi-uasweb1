@@ -18,21 +18,6 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
-
-	public function home()
-	{
-		$this->template->load('theme', 'welcome_message', $data);
-	}
-
-	public function form()
-	{
-		$this->template->load('theme', 'input_form');
-	}
-
 	public function formuas(){
 		$this->template->load('theme', 'formuas');
 	}
@@ -45,8 +30,8 @@ class Welcome extends CI_Controller {
 		$cat = $this->input->post('cat');
 		$member = $this->input->post('member');
 
-		$this->model('Modperson');
-		$this->Modperson->save_data();
+		$this->load->model('Modperson');
+		$this->Modperson->save_data($fname, $lname, $gen, $date, $cat, $member);
 
 		$this->template->load('theme', 'notif');
 	}

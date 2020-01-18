@@ -6,7 +6,7 @@
                             </div>
                             <div class="card-body">
                                 
-                                <form action="<?= base_url('Welcome/savedata')?>" method="POST">
+                                <form action="<?= base_url('welcome/savedata'); ?>" method="POST">
                                     <div class="form-body">
                                         <h3 class="card-title">Person Info</h3>
                                         <hr>
