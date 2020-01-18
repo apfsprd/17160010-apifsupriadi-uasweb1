@@ -32,4 +32,23 @@ class Welcome extends CI_Controller {
 	{
 		$this->template->load('theme', 'input_form');
 	}
+
+	public function formuas(){
+		$this->template->load('theme', 'formuas');
+	}
+
+	public function savedata(){
+		$fname = $this->input->post('fname');
+		$lname = $this->input->post('lname');
+		$gen = $this->input->post('gender');
+		$date = $this->input->post('date');
+		$cat = $this->input->post('cat');
+		$member = $this->input->post('member');
+
+		$this->model('Modperson');
+		$this->Modperson->save_data();
+
+		$this->template->load('theme', 'notif');
+	}
+
 }
