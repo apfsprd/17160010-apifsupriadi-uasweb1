@@ -15,4 +15,13 @@ class Modperson extends CI_Model {
         $this->db->insert('person', $data);
     }
 
+    public function select_data(){
+        return $this->db->get('person');
+    }
+
+    public function delete_data($birth){
+        $this->db->where('birth', $birth);
+        return $this->db->delete('person');
+    }
+
 }
